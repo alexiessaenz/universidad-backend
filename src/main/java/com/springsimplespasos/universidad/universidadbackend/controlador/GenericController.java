@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,7 +46,15 @@ public class GenericController <E, S extends GenericoDAO<E>> {
         service.deleteById(id);
         return new ResponseEntity<>(oEntidad.get(), HttpStatus.OK);
     }
-
-
-    //altaEntidad (Entidad)
+    @PostMapping(value = "/persist")
+    public ResponseEntity<E> altaEntidad(E entidad){
+        try {
+            E entidadPersistida = service.save(entidad);
+            return new ResponseEntity<>(entidadPersistida, HttpStatus.OK);
+        } catch (Exception e) {
+            throw new BadRequestException(String.format("No se ha podido guardar el %s", nombreEntidad));
+        } finally {
+            System.out.println("Se ha guardado el " + nombreEntidad);
+        }
+    }
 }
