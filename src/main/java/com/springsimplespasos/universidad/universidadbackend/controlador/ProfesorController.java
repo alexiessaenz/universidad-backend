@@ -4,9 +4,9 @@ import com.springsimplespasos.universidad.universidadbackend.exception.BadReques
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Alumno;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Persona;
-import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.AlumnoDAO;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
+import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.ProfesorDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -16,26 +16,34 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/alumnos")
-public class AlumnoController extends PersonaController{
+@RequestMapping("/profesores")
+public class ProfesorController extends PersonaController{
 
     private final CarreraDAO carreraDAO;
-    private final AlumnoDAO alumnoDAO;
+    private final ProfesorDAO profesorDAO;
 
     @Autowired
-    public AlumnoController(@Qualifier("alumnoDAOImpl") PersonaDAO alumnoDao, CarreraDAO carreraDAO) {
-        super(alumnoDao);
-        nombreEntidad = "Alumno";
+    public ProfesorController(@Qualifier("profesorDAOImpl") PersonaDAO profesorDao, CarreraDAO carreraDAO) {
+        super(profesorDao);
+        nombreEntidad = "Profesor";
         this.carreraDAO = carreraDAO;
-        this.alumnoDAO = (AlumnoDAO) alumnoDao;
+        this.profesorDAO = (ProfesorDAO) profesorDao;
     }
     @GetMapping(value = "/all")
     public ResponseEntity<List<Persona>> buscarTodos(){
-        List<Persona> listado = (List<Persona>) alumnoDAO.findAll();
+        List<Persona> listado = (List<Persona>) service.findAll();
         if(listado.isEmpty())
             throw new BadRequestException(String.format("No se encontro %s", nombreEntidad));
         return ResponseEntity.ok(listado);
     }
+    @GetMapping(value = "/carrera/{nombre}")
+    public ResponseEntity<List<Persona>> buscarProfesoresPorNombreCarrera(@PathVariable String nombre){
+        List<Persona> listado = (List<Persona>) profesorDAO.buscarProfesoresPorNombreCarrera(nombre);
+        if(listado.isEmpty())
+            throw new BadRequestException(String.format("No se encontro %s", nombreEntidad));
+        return ResponseEntity.ok(listado);
+    }
+
     /*@GetMapping
     public List<Persona> obtenerTodos(){
         List<Persona> alumnos = (List<Persona>) alumnoDao.findAll();
