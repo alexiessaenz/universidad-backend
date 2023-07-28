@@ -18,7 +18,7 @@ public class Carrera implements Serializable {
     @Column(nullable = false, unique = true, length = 80)
     private String nombre;
     @Column(name = "cantidad_materias")
-    private Integer cantidaMaterias;
+    private Integer cantidadMaterias;
     @Column(name = "cantidad_anios")
     private Integer cantidadAnios;
     @Column(name = "fecha_alta")
@@ -46,7 +46,7 @@ public class Carrera implements Serializable {
     public Carrera(Integer id, String nombre, Integer cantidaMaterias, Integer cantidadAnios) {
         this.id = id;
         this.nombre = nombre;
-        this.cantidaMaterias = cantidaMaterias;
+        this.cantidadMaterias = cantidaMaterias;
         this.cantidadAnios = cantidadAnios;
     }
 
@@ -66,12 +66,12 @@ public class Carrera implements Serializable {
         this.nombre = nombre;
     }
 
-    public Integer getCantidaMaterias() {
-        return cantidaMaterias;
+    public Integer getCantidadMaterias() {
+        return cantidadMaterias;
     }
 
-    public void setCantidaMaterias(Integer cantidaMaterias) {
-        this.cantidaMaterias = cantidaMaterias;
+    public void setCantidadMaterias(Integer cantidaMaterias) {
+        this.cantidadMaterias = cantidaMaterias;
     }
 
     public Integer getCantidadAnios() {
@@ -129,7 +129,7 @@ public class Carrera implements Serializable {
         return "Carrera{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", cantidaMaterias=" + cantidaMaterias +
+                ", cantidaMaterias=" + cantidadMaterias +
                 ", cantidadAnios=" + cantidadAnios +
                 ", fechaAlta=" + fechaAlta +
                 ", fechaModificacion=" + fechaModificacion +

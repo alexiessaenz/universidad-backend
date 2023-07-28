@@ -17,8 +17,8 @@ import java.util.List;
 @SpringBootApplication
 public class UniversidadBackendApplication {
 
-	@Autowired
-	private AlumnoDAO service;
+//	@Autowired
+//	private AlumnoDAO service;
 
 	public static void main(String[] args) {
 		String[] beanDefinitionNames = SpringApplication.run(UniversidadBackendApplication.class, args).getBeanDefinitionNames();
@@ -27,14 +27,14 @@ public class UniversidadBackendApplication {
 		}*/
 	}
 
-	@Bean
-	public CommandLineRunner runner(){
-		return args -> {
-			Direccion direccion = new Direccion
-					("Calle Circunvalacion", "123", "4567", "", "", "San Salvador");
-			Persona alumno = new Alumno(null, "Frank", "Lopez", "0123456789", direccion);
-			Persona save = service.save(alumno);
-			System.out.println(save.toString());
-		};
-	}
+//	@Bean
+//	public CommandLineRunner runner(){
+//		return args -> {
+//			Direccion direccion = new Direccion
+//					("Calle Circunvalacion", "123", "4567", "", "", "San Salvador");
+//			Persona alumno = new Alumno(null, "Frank", "Lopez", "0123456789", direccion);
+//			Persona save = service.save(alumno);
+//			System.out.println(save.toString());
+//		};
+//	}
 }
