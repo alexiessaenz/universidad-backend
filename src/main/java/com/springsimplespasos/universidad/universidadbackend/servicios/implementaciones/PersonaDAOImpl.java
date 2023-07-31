@@ -3,10 +3,13 @@ package com.springsimplespasos.universidad.universidadbackend.servicios.implemen
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Persona;
 import com.springsimplespasos.universidad.universidadbackend.repositorios.PersonaRepository;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
+/*@Qualifier("PersonaDAOImpl")
+@Service*/
 public class PersonaDAOImpl extends GenericoDAOImpl<Persona, PersonaRepository> implements PersonaDAO {
 
     public PersonaDAOImpl(PersonaRepository repository) {

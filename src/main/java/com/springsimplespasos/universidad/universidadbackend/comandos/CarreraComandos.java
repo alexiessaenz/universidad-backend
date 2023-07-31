@@ -3,6 +3,7 @@ package com.springsimplespasos.universidad.universidadbackend.comandos;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Component
 public class CarreraComandos implements CommandLineRunner {
 
+    @Qualifier("CarreraDAOImpl")
     @Autowired
     private CarreraDAO servicio;
 

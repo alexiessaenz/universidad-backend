@@ -26,7 +26,7 @@ public class AlumnoController extends PersonaController{
     private final AlumnoDAO alumnoDAO;
 
     @Autowired
-    public AlumnoController(@Qualifier("alumnoDAOImpl") PersonaDAO alumnoDao, CarreraDAO carreraDAO) {
+    public AlumnoController(@Qualifier("AlumnoDAOImpl") PersonaDAO alumnoDao, CarreraDAO carreraDAO) {
         super(alumnoDao);
         nombreEntidad = "Alumno";
         this.carreraDAO = carreraDAO;

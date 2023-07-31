@@ -20,7 +20,7 @@ import java.util.Optional;
 public class AlumnoCommand implements CommandLineRunner {
 
     @Autowired
-    @Qualifier("alumnoDAOImpl")
+    @Qualifier("AlumnoDAOImpl")
     private PersonaDAO personaDao;
 
     @Autowired

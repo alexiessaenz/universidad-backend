@@ -4,11 +4,13 @@ import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Ca
 import com.springsimplespasos.universidad.universidadbackend.repositorios.CarreraRepository;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Qualifier("CarreraDAOImpl")
 @Service
 public class CarreraDAOImpl extends GenericoDAOImpl<Carrera, CarreraRepository> implements CarreraDAO {
 

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Qualifier("profesorDAOImpl")
+@Qualifier("ProfesorDAOImpl")
 @Service
 public class ProfesorDAOImpl extends PersonaDAOImpl implements ProfesorDAO {
 

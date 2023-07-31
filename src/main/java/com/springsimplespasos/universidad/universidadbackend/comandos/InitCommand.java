@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class InitCommand implements CommandLineRunner {
 
     @Autowired
-    @Qualifier(value = "alumnoDAOImpl")
+    @Qualifier(value = "AlumnoDAOImpl")
     private PersonaDAO servicioAlumno;
 
     /*@Autowired
@@ -20,7 +20,7 @@ public class InitCommand implements CommandLineRunner {
     private PersonaDao servicioEmpleado;*/
 
     @Autowired
-    @Qualifier(value = "alumnoDAOImpl")
+    @Qualifier(value = "AlumnoDAOImpl")
     private PersonaDAO servicioProfesor;
 
     /*@Autowired

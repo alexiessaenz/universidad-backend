@@ -16,9 +16,10 @@ import org.springframework.stereotype.Component;
 public class ProfesorCommand implements CommandLineRunner {
 
     @Autowired
-    //@Qualifier("profesorDAOImpl")
+    @Qualifier("ProfesorDAOImpl")
     private PersonaDAO personaDao;
 
+    @Qualifier("CarreraDAOImpl")
     @Autowired
     private CarreraDAO carreraDao;
 

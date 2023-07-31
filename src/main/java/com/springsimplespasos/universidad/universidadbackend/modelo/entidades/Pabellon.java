@@ -1,6 +1,6 @@
 package com.springsimplespasos.universidad.universidadbackend.modelo.entidades;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
