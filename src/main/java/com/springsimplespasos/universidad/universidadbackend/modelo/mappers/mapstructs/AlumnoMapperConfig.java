@@ -9,7 +9,7 @@ import org.mapstruct.MapperConfig;
 import org.mapstruct.MappingTarget;
 
 @MapperConfig
-public interface AlumnoMapperConfig {
+public interface AlumnoMapperConfig extends PersonaMapperConfig{
     @InheritConfiguration(name = "mapPersona")
     void mapAlumno(Alumno alumno, @MappingTarget AlumnoDTO alumnoDTO);
 }

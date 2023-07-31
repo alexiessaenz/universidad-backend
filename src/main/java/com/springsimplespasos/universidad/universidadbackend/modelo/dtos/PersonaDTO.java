@@ -1,5 +1,7 @@
 package com.springsimplespasos.universidad.universidadbackend.modelo.dtos;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Direccion;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +14,16 @@ import jakarta.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@RequiredArgsConstructor
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "tipo"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = AlumnoDTO.class, name = "alumno"),
+        @JsonSubTypes.Type(value = EmpleadoDTO.class, name = "empleado"),
+//        @JsonSubTypes.Type(value = ProfesorDTO.class, name = "profesor")
+})
 public abstract class PersonaDTO {
     private Integer id;
     private String nombre;
