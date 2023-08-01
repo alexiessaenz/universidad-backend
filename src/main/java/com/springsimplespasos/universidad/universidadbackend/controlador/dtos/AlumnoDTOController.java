@@ -37,11 +37,11 @@ public class AlumnoDTOController extends PersonaDTOController {
 
     public ResponseEntity<?> obtenerAlumnoPorID(@PathVariable Integer id){
         Map<String,Object> mensaje = new HashMap<>();
-        PersonaDTO dto = super.buscarPersonaPorDni(id);
-        if (dto == null) {
-            mensaje.put("success", Boolean.FALSE);
-            mensaje.put("data", dto);
-        }
+        //PersonaDTO dto = super.buscarPersonaPorDni(id);
+//        if (dto == null) {
+//            mensaje.put("success", Boolean.FALSE);
+//            mensaje.put("data", dto);
+//        }
 
         return ResponseEntity.ok(mensaje);
     }
@@ -50,15 +50,15 @@ public class AlumnoDTOController extends PersonaDTOController {
     public ResponseEntity<?> altaAlumno(@Valid @RequestBody PersonaDTO personaDTO,
                                         BindingResult result){
         Map<String,Object> mensaje = new HashMap<>();
-        if (result.hasErrors()) {
-            mensaje.put("success", Boolean.FALSE);
-            mensaje.put("validations", super.obtenerValidaciones(result));
-            return ResponseEntity.badRequest().body(mensaje);
-        }
+//        if (result.hasErrors()) {
+//            mensaje.put("success", Boolean.FALSE);
+//            mensaje.put("validations", super.obtenerValidaciones(result));
+//            return ResponseEntity.badRequest().body(mensaje);
+//        }
 
-        PersonaDTO save = super.altaPersona(alumnoMapper.mapAlumno((Alumno) personaDTO));
-        mensaje.put("success", Boolean.TRUE);
-        mensaje.put("data", save);
+//        PersonaDTO save = super.altaPersona(alumnoMapper.mapAlumno((Alumno) personaDTO));
+//        mensaje.put("success", Boolean.TRUE);
+//        mensaje.put("data", save);
         return ResponseEntity.status(HttpStatus.CREATED).body(mensaje);
     }
 
@@ -125,17 +125,17 @@ public class AlumnoDTOController extends PersonaDTOController {
             throw new BadRequestException(String.format("Alumno con id %d no existe", idAlumno));
         }
 
-        Optional<Carrera> oCarrera = carreraDAO.findById(idCarrera);
-        if(!oCarrera.isPresent()){
-            mensaje.put("success",Boolean.FALSE);
-            mensaje.put("mensaje",String.format("Carrera con id %d no existe", idCarrera));
-            return ResponseEntity.badRequest().body(mensaje);
-        }
+//        Optional<Carrera> oCarrera = carreraDAO.findById(idCarrera);
+//        if(!oCarrera.isPresent()){
+//            mensaje.put("success",Boolean.FALSE);
+//            mensaje.put("mensaje",String.format("Carrera con id %d no existe", idCarrera));
+//            return ResponseEntity.badRequest().body(mensaje);
+//        }
 
         Persona alumno = oAlumno.get();
-        Carrera carrera = oCarrera.get();
+//        Carrera carrera = oCarrera.get();
 
-        ((Alumno)alumno).setCarrera(carrera);
+//        ((Alumno)alumno).setCarrera(carrera);
 
         mensaje.put("datos",service.save(alumno));
         mensaje.put("success",Boolean.TRUE);

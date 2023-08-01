@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.websocket.server.PathParam;
 import java.util.List;
 import java.util.Optional;
-
+@Deprecated
 public class PersonaController extends GenericController<Persona, PersonaDAO> {
 
-    public PersonaController(PersonaDAO service){
-        super(service);
+    public PersonaController(PersonaDAO service,String entidad){
+        super(service,entidad);
     }
 
     @GetMapping("/nombre-apellido")

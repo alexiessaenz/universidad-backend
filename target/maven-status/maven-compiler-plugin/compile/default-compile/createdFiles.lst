@@ -5,6 +5,8 @@ com\springsimplespasos\universidad\universidadbackend\modelo\entidades\Persona.c
 com\springsimplespasos\universidad\universidadbackend\controlador\dtos\CarreraDTOController.class
 com\springsimplespasos\universidad\universidadbackend\controlador\PabellonController.class
 com\springsimplespasos\universidad\universidadbackend\servicios\implementaciones\CarreraDAOImpl.class
+com\springsimplespasos\universidad\universidadbackend\modelo\mappers\mapstructs\AlumnoMapper.class
+com\springsimplespasos\universidad\universidadbackend\modelo\dtos\EmpleadoDTO.class
 com\springsimplespasos\universidad\universidadbackend\modelo\dtos\PersonaDTO.class
 com\springsimplespasos\universidad\universidadbackend\modelo\mappers\mapstructs\ProfesorMapperConfig.class
 com\springsimplespasos\universidad\universidadbackend\comandos\CarreraComandos.class
@@ -35,7 +37,12 @@ com\springsimplespasos\universidad\universidadbackend\repositorios\PersonaReposi
 com\springsimplespasos\universidad\universidadbackend\servicios\contratos\ProfesorDAO.class
 com\springsimplespasos\universidad\universidadbackend\modelo\mappers\mapstructs\CarreraMapperMSImpl.class
 com\springsimplespasos\universidad\universidadbackend\modelo\entidades\Pabellon.class
+com\springsimplespasos\universidad\universidadbackend\configurations\SpringFoxSwagger.class
+com\springsimplespasos\universidad\universidadbackend\controlador\dtos\AlumnoDTOController.class
+com\springsimplespasos\universidad\universidadbackend\controlador\dtos\GenericDTOController.class
+com\springsimplespasos\universidad\universidadbackend\controlador\dtos\PersonaDTOController.class
 com\springsimplespasos\universidad\universidadbackend\controlador\AlumnoController.class
+com\springsimplespasos\universidad\universidadbackend\modelo\mappers\mapstructs\AlumnoMapperImpl.class
 com\springsimplespasos\universidad\universidadbackend\modelo\entidades\Alumno.class
 com\springsimplespasos\universidad\universidadbackend\UniversidadBackendApplication.class
 com\springsimplespasos\universidad\universidadbackend\comandos\AlumnoCommand.class

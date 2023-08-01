@@ -17,8 +17,8 @@ public class CarreraController extends GenericController<Carrera, CarreraDAO>{
 
     @Autowired
     public CarreraController(CarreraDAO service) {
-        super(service);
-        nombreEntidad = "Carrera";
+        super(service, "nombreEntidad");
+
     }
 
     @GetMapping("/{codigo}")

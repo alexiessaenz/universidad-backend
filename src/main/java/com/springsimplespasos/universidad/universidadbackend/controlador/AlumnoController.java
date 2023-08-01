@@ -9,6 +9,7 @@ import com.springsimplespasos.universidad.universidadbackend.servicios.contratos
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/alumnos")
+@Deprecated
+@ConditionalOnProperty(prefix = "app", name = "controller.enable-dto", havingValue = "false")
 public class AlumnoController extends PersonaController{
 
     private final CarreraDAO carreraDAO;
@@ -27,7 +30,7 @@ public class AlumnoController extends PersonaController{
 
     @Autowired
     public AlumnoController(@Qualifier("AlumnoDAOImpl") PersonaDAO alumnoDao, CarreraDAO carreraDAO) {
-        super(alumnoDao);
+        super(alumnoDao,"entidad");
         nombreEntidad = "Alumno";
         this.carreraDAO = carreraDAO;
         this.alumnoDAO = (AlumnoDAO) alumnoDao;

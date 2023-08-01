@@ -17,7 +17,7 @@ public class GenericController <E, S extends GenericoDAO<E>> {
     protected final S service;
     protected String nombreEntidad;
 
-    public GenericController(S service) {
+    public GenericController(S service, String nombreEntidad) {
         this.service = service;
     }
 

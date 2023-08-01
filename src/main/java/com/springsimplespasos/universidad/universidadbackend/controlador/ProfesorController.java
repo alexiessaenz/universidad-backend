@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@Deprecated
 @RestController
 @RequestMapping("/profesores")
 public class ProfesorController extends PersonaController{
@@ -23,8 +23,8 @@ public class ProfesorController extends PersonaController{
     private final ProfesorDAO profesorDAO;
 
     @Autowired
-    public ProfesorController(@Qualifier("profesorDAOImpl") PersonaDAO profesorDao, CarreraDAO carreraDAO) {
-        super(profesorDao);
+    public ProfesorController(@Qualifier("profesorDAOImpl") PersonaDAO profesorDao, CarreraDAO carreraDAO){
+        super(profesorDao,"entidad");
         nombreEntidad = "Profesor";
         this.carreraDAO = carreraDAO;
         this.profesorDAO = (ProfesorDAO) profesorDao;

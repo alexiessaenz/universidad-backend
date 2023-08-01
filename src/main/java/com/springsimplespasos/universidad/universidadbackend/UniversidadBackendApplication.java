@@ -21,10 +21,11 @@ public class UniversidadBackendApplication {
 //	private AlumnoDAO service;
 
 	public static void main(String[] args) {
-		String[] beanDefinitionNames = SpringApplication.run(UniversidadBackendApplication.class, args).getBeanDefinitionNames();
-		for(String str : beanDefinitionNames){
-			System.out.println(str);
-		}
+		SpringApplication.run(UniversidadBackendApplication.class, args);
+//		String[] beanDefinitionNames = SpringApplication.run(UniversidadBackendApplication.class, args).getBeanDefinitionNames();
+//		for(String str : beanDefinitionNames){
+//			System.out.println(str);
+//		}
 	}
 
 //	@Bean
